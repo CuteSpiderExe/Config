@@ -1,0 +1,935 @@
+﻿@model Config.Repository.Models.KorzinaView
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Загрузить сборку</h2>
+<div>
+    @using (Html.BeginForm("Loading", "Basket"))
+    {
+        <select name="selectSborka" id="pet-select">
+            <option value="-1">Выбрать сборку</option>
+            @foreach (var item in Model.ListSborki)
+            {
+                <option value="@item.Item2">@item.Item1</option>
+
+            }
+        </select>
+
+
+
+        <input type="submit" class="btn btn-success" value="Загрузить" />
+
+    }
+    @using (Html.BeginForm("Clear", "Basket"))
+    {
+        <input type="submit" class="btn btn-danger" value="Очистить" />
+    }
+</div>
+
+<h2>Видеокарта</h2>
+@if (Model.videocardKorzina != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Объем видеопамяти
+            </th>
+            <th>
+                Тип видеопамяти
+            </th>
+            <th>
+                Энергоротребление
+            </th>
+            <th>
+                Длина
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.videocardKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.videocardKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.videocardKorzina.Memory)ГБ
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.videocardKorzina.Gddr)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.videocardKorzina.Power)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.videocardKorzina.VideoSize)мм
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.videocardKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.videocardKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.videocardKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.videocardKorzina.Memory)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.videocardKorzina.Gddr)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.videocardKorzina.Power)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.videocardKorzina.VideoSize)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.videocardKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorVideocard != "" && Model.ErrorVideoCorpus != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorVideocard
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorVideoCorpus
+        </p>
+    }
+
+}
+else
+{
+    <p style="background-color :tomato">Видеокарта не добавленна</p>
+}
+
+<h2>Блок питания</h2>
+@if (Model.powerBlockKorzina != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Мощность
+            </th>
+            <th>
+                Сертификат
+            </th>
+            <th>
+                Размер
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.powerBlockKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Power)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Sertificat)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.powerBlockKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Size)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Sertificat)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Power)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.powerBlockKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorPowerBlock != "" && Model.ErrorPowerblockCorpus != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorPowerBlock
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorPowerblockCorpus
+        </p>
+    }
+
+}
+else
+{
+    <p style="background-color :tomato">Блок питания не добавлен</p>
+}
+
+<h2>Процессор</h2>
+@if (Model.processorKorzina != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Сокет
+            </th>
+            <th>
+                Кол-во ядер
+            </th>
+            <th>
+                Частота ядер
+            </th>
+            <th>
+                Тип оперативной памяти
+            </th>
+            <th>
+                Тепловыделение
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.processorKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.processorKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.processorKorzina.Socket)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.processorKorzina.Core)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.processorKorzina.CoreShast)ГГц
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.processorKorzina.Ddr)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.processorKorzina.Tdp)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.processorKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.processorKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.processorKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.processorKorzina.Socket)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.processorKorzina.Core)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.processorKorzina.CoreShast)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.processorKorzina.Ddr)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.processorKorzina.Tdp)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.processorKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorProcessor != "" && Model.ErrorProcessorDdr != "" && Model.ErrorProcessorOhlad != "" && Model.ErrorProcessorOhladWater != "" && Model.ErrorProcessorOhladSocket != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorProcessor
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorProcessorDdr
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorProcessorOhlad
+        </p>
+        <p style="background-color:tomato">
+            @Model.ErrorProcessorOhladWater
+        </p>
+        <p style="background-color:tomato">
+            @Model.ErrorProcessorOhladSocket
+        </p>
+
+    }
+
+}
+else
+{
+    <p style="background-color :tomato">Процессор не добавлен</p>
+}
+
+<h2>Материнская плата</h2>
+@if (Model.motherboardKorzina != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Сокет
+            </th>
+            <th>
+                Чипсет
+            </th>
+            <th>
+                Тип оперативной памяти
+            </th>
+            <th>
+                Размер материнской платы
+            </th>
+            <th>
+                Кол-во планок оперативной памяти
+            </th>
+            <th>
+                Кол-во разъмов М2
+            </th>
+            <th>
+                Кол-во разъемов SATA
+            </th>
+            <th>
+                Кол-во PCI
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.motherboardKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Socket)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Chipset)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Ddr)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Standart)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.DdrKol)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.M2)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Sata)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Pci)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.motherboardKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Socket)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Chipset)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Ddr)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.DdrKol)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Pci)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.M2)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Sata)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.motherboardKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorProcessor != "" && Model.ErrorMotherboardDdr != "" && Model.ErrorMotherboardMemory != "" && Model.ErrorMotherCorpus != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorProcessor
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorMotherboardDdr
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorMotherboardMemory
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorMotherCorpus
+        </p>
+    }
+
+}
+else
+{
+    <p style="background-color :tomato">Материнская плата не добавлена</p>
+}
+
+<h2>Оперативная память</h2>
+@if (Model.ddrKorzina != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Тип памяти
+            </th>
+            <th>
+                Объем памяти
+            </th>
+            <th>
+                Частота памяти
+            </th>
+            <th>
+                Кол-во планок
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.ddrKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.ddrKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ddrKorzina.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ddrKorzina.Memory)ГБ
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ddrKorzina.Chast)МГц
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ddrKorzina.Kol)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ddrKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.ddrKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ddrKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ddrKorzina.Type)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ddrKorzina.Memory)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ddrKorzina.Chast)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ddrKorzina.Kol)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ddrKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorDdr != "" && Model.ErrorDdrProcessor != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorDdr
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorDdrProcessor
+        </p>
+    }
+
+}
+else
+{
+    <p style="background-color :tomato">Оперативная память не добавлена</p>
+}
+
+<h2>Хранилище данных</h2>
+@if (Model.memoryKorzina != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Интерфейс подключения
+            </th>
+            <th>
+                Объем памяти
+            </th>
+            <th>
+                Скорость чтения
+            </th>
+            <th>
+                Скорость записи
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.memoryKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.memoryKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.memoryKorzina.Interface)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.memoryKorzina.MemorySize)ГБ
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.memoryKorzina.SpeedChten)Мбайт/сек
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.memoryKorzina.SpeedZap)Мбайт/сек
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.memoryKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.memoryKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.memoryKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.memoryKorzina.Interface)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.memoryKorzina.MemorySize)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.memoryKorzina.SpeedChten)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.memoryKorzina.SpeedZap)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.memoryKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorMemoryMotherboard != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorMemoryMotherboard
+        </p>
+    }
+
+}
+else
+{
+    <p style="background-color :tomato">Хранилище данных не добавлено</p>
+}
+
+<h2>Воздушная система охлаждения</h2>
+@if (Model.ohladKorzina != null)
+{
+    
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименоваие
+            </th>
+            <th>
+                Сокет
+            </th>
+            <th>
+                Высота
+            </th>
+            <th>
+                Теплоотвод
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.ohladKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.ohladKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladKorzina.Socket)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladKorzina.Size)мм
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladKorzina.Tdp)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.ohladKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladKorzina.Socket)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladKorzina.Tdp)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladKorzina.Size)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorOhladProcessor != "" && Model.ErrorOhladProcessorSocket != "" && Model.ErrorOhladCorpus != "" && Model.ErrorOhladCorpus != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorOhladProcessor
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorOhladProcessorSocket
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorOhladCorpus
+        </p>
+    }
+}
+else
+{
+    <p style="background-color :tomato">Воздушная система охлаждения не добавлена</p>
+}
+
+<h2>Водяная система охлаждения</h2>
+@if (Model.ohladwaterKorzina != null)
+{
+    
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Сокет
+            </th>
+            <th>
+                Длина
+            </th>
+            <th>
+                Теплоотвод
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.ohladwaterKorzina.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Socket)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Size)мм
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Tdp)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.ohladwaterKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Socket)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Tdp)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Size)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.ohladwaterKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorOhladWaterProcessor != "" && Model.ErrorOhladWaterProcessorSocket != "" && Model.ErrorOhladWaterCorpus != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorOhladWaterProcessor
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorOhladWaterProcessorSocket
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorOhladWaterCorpus
+        </p>
+    }
+}
+else
+{
+    <p style="background-color :tomato">Водяная система охлаждения не добавлена</p>
+}
+
+
+
+<h2>Корпус</h2>
+@if (Model.corpusKorzina != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Размер материнской платы
+            </th>
+            <th>
+                Максимальная длина видеокарты
+            </th>
+            <th>
+                Размер блока питания
+            </th>
+            <th>
+                Максиммальная высота куллера процессора
+            </th>
+            <th>
+                Максимальный размер водяного охлаждения
+            </th>
+            <th>
+                Кол-во SATA
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(Model.corpusKorzina.Image) + "\" />")
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.MotherSize)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.VideoSize)мм
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.PowerBlockSize)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.CpuFunSize)мм
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.CpuWaterSize)мм
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.SataKol)
+            </td>
+            <td>
+                @Html.DisplayFor(item => Model.corpusKorzina.Cost)₽
+            </td>
+        </tr>
+        @*<tr>
+                @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                        + Convert.ToBase64String(Model.corpusKorzina.Image) + "\" />")
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.Name)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.Size)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.MotherSize)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.VideoSize)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.PowerBlockSize)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.CpuFunSize)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.SataKol)
+            </tr>
+            <tr>
+                @Html.DisplayFor(item => Model.corpusKorzina.Cost)
+            </tr>*@
+    </table>
+    if (Model.ErrorCorpusOhlad != "" && Model.ErrorCorpusMother != "" && Model.ErrorCorpusPowerblock != "" && Model.ErrorCorpusVideo != "" && Model.ErrorCorpusOhladWater != "")
+    {
+        <p style="background-color :tomato">
+            @Model.ErrorCorpusOhlad
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorCorpusMother
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorCorpusPowerblock
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorCorpusVideo
+        </p>
+        <p style="background-color :tomato">
+            @Model.ErrorCorpusOhladWater
+        </p>
+    }
+
+}
+else
+{
+    <p style="background-color :tomato">Корпус не добавлен</p>
+}
+
+<div></div>
+<h1>
+    Общая стоимость @Model.AllCost₽
+</h1>
+
+<div></div>
+
+@using (Html.BeginForm("Save", "Basket"))
+{
+    <input type="text" name="NameSborka" />
+
+    @*<input width="1" name='Save' value=@videocard.IdVideocard , style="visibility: hidden; width: 2px" />*@
+    <input type="submit" class="btn btn-success" value="Сохранить" />
+}
+
+<div></div>
+
+@*@Html.Action("Заказать", "About", "Zakaz")*@
+@using (Html.BeginForm("About", "Zakaz"))
+{
+    @*<input width="1" name='Save' value=@videocard.IdVideocard , style="visibility: hidden; width: 2px" />*@
+    <input type="submit" class="btn btn-success" value="Заказать" />
+}

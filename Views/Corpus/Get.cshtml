@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Config.Repository.Models.Corpus>
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<h2>Get</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VideoSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PowerBlockSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CpuFunSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CpuWaterSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SataKol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.Raw("<img style='width:150px; height:130px;' src=\"data:image/jpeg;base64,"
+                                 + Convert.ToBase64String(item.Image) + "\" />")
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VideoSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PowerBlockSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CpuFunSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CpuWaterSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SataKol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdCorpus }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdCorpus })
+        </td>
+    </tr>
+}
+
+</table>

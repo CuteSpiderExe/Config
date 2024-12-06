@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Config.Repository.Models.OhladWater>
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<h2>Get</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tdp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Socket)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.Raw("<img style='width:150px; height:130px;' src=\"data:image/jpeg;base64,"
+                                 + Convert.ToBase64String(item.Image) + "\" />")
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tdp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Socket)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdOhladWater }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdOhladWater })
+        </td>
+    </tr>
+}
+
+</table>

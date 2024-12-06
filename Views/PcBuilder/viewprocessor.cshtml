@@ -1,0 +1,81 @@
+﻿@model Config.Repository.Models.Builder
+
+@{
+    ViewBag.Title = "viewprocessor";
+}
+
+<h2>Процессоры</h2>
+<body>
+<table class="table">
+    <tr>
+    </tr>
+    @foreach (var processor in Model.Processors)
+    {
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Сокет
+            </th>
+            <th>
+                Кол-во ядер
+            </th>
+            <th>
+                Частота ядер
+            </th>
+            <th>
+                Тип оперативной памяти
+            </th>
+            <th>
+                Тепловыделение
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:100px; height:70px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(processor.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => processor.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => processor.Socket)
+            </td>
+            <td>
+                @Html.DisplayFor(item => processor.Core)
+            </td>
+            <td>
+                @Html.DisplayFor(item => processor.CoreShast)ГГц
+            </td>
+            <td>
+                @Html.DisplayFor(item => processor.Ddr)
+            </td>
+            <td>
+                @Html.DisplayFor(item => processor.Tdp)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => processor.Cost)₽
+            </td>
+            <td>
+                @using (Html.BeginForm("AddToBuildProcessor", "PcBuilder"))
+                {
+                    <input width="1" name='id' value=@processor.IdProcessor , style="visibility: hidden; width: 2px" />
+                    <input type="submit" class="btn btn-success" value="Добавить" />
+                }
+
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+</body>

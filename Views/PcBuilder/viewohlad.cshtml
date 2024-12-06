@@ -1,0 +1,69 @@
+﻿@model Config.Repository.Models.Builder
+
+@{
+    ViewBag.Title = "viewohlad";
+}
+
+<h2>Воздушная система охлаждения</h2>
+<body>
+<table class="table">
+    <tr>
+    </tr>
+    @foreach (var ohlad in Model.Ohlads)
+    {
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименоваие
+            </th>
+            <th>
+                Сокет
+            </th>
+            <th>
+                Высота
+            </th>
+            <th>
+                Теплоотвод
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:100px; height:70px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(ohlad.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => ohlad.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => ohlad.Socket)
+            </td>
+            <td>
+                @Html.DisplayFor(item => ohlad.Size)мм
+            </td>
+            <td>
+                @Html.DisplayFor(item => ohlad.Tdp)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => ohlad.Cost)₽
+            </td>
+            <td>
+                @using (Html.BeginForm("AddToBuildOhlad", "PcBuilder"))
+                {
+                    <input width="1" name='id' value=@ohlad.IdOhlad , style="visibility: hidden; width: 2px" />
+                    <input type="submit" class="btn btn-success" value="Добавить" />
+                }
+
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+</body>

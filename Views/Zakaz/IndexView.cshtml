@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Config.Repository.ZakazModel>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Заказы</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Пользователь
+        </th>
+        <th>
+            Дата заказа
+        </th>
+        <th>
+            Адресс
+        </th>
+        <th>
+            Статус
+        </th>
+        <th>
+            Комплектующие
+        </th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.zakaz.IdSborkaNavigation.IdUserNavigation.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zakaz.Date.GetDateTimeFormats('d')[0])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zakaz.Adress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zakaz.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Komplect)
+            </td>
+        </tr>
+    }
+
+</table>

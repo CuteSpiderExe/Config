@@ -1,0 +1,508 @@
+﻿@model Config.Repository.Models.Builder
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Компоненты</h2>
+
+<body>
+    <table align="center" border="1" cellspacing="0" cellpadding="12" width="200">
+        <tr height="50">
+            <td valign="top" align="left">
+                @using (Html.BeginForm("viewvideo", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Видеокарты" />
+                }
+            </td>
+            <td valign="top" align="center">
+                @using (Html.BeginForm("viewprocessor", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Процессоры" />
+                }
+            </td>
+            <td valign="top" align="right">
+                @using (Html.BeginForm("viewcorpus", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Корпуса" />
+                }               
+            </td>
+        </tr>
+        <tr height="50">
+            <td valign="middle" align="left">
+                @using (Html.BeginForm("viewpowerblock", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Блоки питания" />
+                }
+            </td>
+            <td valign="middle" align="center">
+                @using (Html.BeginForm("viewddr", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Оперативная память" />
+                }
+            </td>
+            <td valign="middle" align="right">
+                @using (Html.BeginForm("viewmemory", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Хранилище данных" />
+                }
+            </td>
+        </tr>
+        <tr height="50">
+            <td valign="bottom" align="left">
+                @using (Html.BeginForm("viewmotherboard", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Материнское платы" />
+                }
+            </td>
+            <td valign="bottom" align="center">
+                @using (Html.BeginForm("viewohlad", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Воздушное охлаждение" />
+                }
+            </td>
+            <td valign="bottom" align="right">
+                @using (Html.BeginForm("viewohladwater", "PcBuilder"))
+                {
+
+                    <input type="submit" class="btn btn-success" value="Водяное охлаждение" />
+                }
+            </td>
+        </tr>
+          
+    </table>
+</body>
+
+@*<p>
+</p>
+
+<details>
+    <summary>Видеокарты</summary>
+    <table class="table">
+        <tr>
+        </tr>
+
+        @foreach (var videocard in Model.Videocards)
+        {
+
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(videocard.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => videocard.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => videocard.Memory)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => videocard.Gddr)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => videocard.Power)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => videocard.VideoSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => videocard.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildVideokarta", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@videocard.IdVideocard , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+            </tr>
+
+        }
+    </table>
+</details>
+
+<details>
+    <summary>Процессоры</summary>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var processor in Model.Processors)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(processor.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => processor.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => processor.Socket)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => processor.Core)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => processor.CoreShast)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => processor.Ddr)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => processor.Tdp)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => processor.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildProcessor", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@processor.IdProcessor , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</details>
+<details>
+    <summary>Материнские платы</summary>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var motherboard in Model.Motherboards)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(motherboard.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Socket)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Chipset)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Ddr)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Standart)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.DdrKol)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.M2)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Sata)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Pci)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => motherboard.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildMotherboard", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@motherboard.IdMotherboard , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</details>
+
+<details>
+    <summary>Блоки питания</summary>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var powerBlock in Model.PowerBlocks)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(powerBlock.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => powerBlock.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => powerBlock.Power)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => powerBlock.Sertificat)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => powerBlock.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => powerBlock.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildPowerblock", "PcBuilder"))
+                    {
+
+                        <input width="1" name='id' value=@powerBlock.IdPowerblock , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</details>
+
+<details>
+    <summary>Оперативная память</summary>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var ddr in Model.Ddrs)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(ddr.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => ddr.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ddr.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ddr.Memory)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ddr.Chast)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ddr.Kol)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ddr.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildDdr", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@ddr.IdDdr , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</details>
+
+
+<details>
+    <summary>Охлаждение</summary>
+    <h2>Куллер процессора</h2>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var ohlad in Model.Ohlads)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(ohlad.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => ohlad.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohlad.Socket)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohlad.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohlad.Tdp)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohlad.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildOhlad", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@ohlad.IdOhlad , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+    <h2>Водяная система охлаждения</h2>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var ohladwater in Model.OhladWaters)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(ohladwater.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => ohladwater.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohladwater.Socket)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohladwater.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohladwater.Tdp)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => ohladwater.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildOhladWater", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@ohladwater.IdOhladWater , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+</details>
+
+<details>
+    <summary>Хранилище данных</summary>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var memory in Model.Memorys)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(memory.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => memory.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => memory.Interface)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => memory.MemorySize)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => memory.SpeedChten)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => memory.SpeedZap)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => memory.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildMemory", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@memory.IdMemory , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</details>
+
+<details>
+    <summary>Корпуса</summary>
+    <table class="table">
+        <tr>
+        </tr>
+        @foreach (var corpus in Model.Corpus)
+        {
+            <tr>
+                <th>
+                    @Html.Raw("<img style='width:50px; height:30px;' src=\"data:image/jpeg;base64,"
+                                         + Convert.ToBase64String(corpus.Image) + "\" />")
+                </th>
+                <td>
+                    @Html.DisplayFor(item => corpus.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => corpus.MotherSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => corpus.VideoSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => corpus.PowerBlockSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => corpus.CpuFunSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => corpus.CpuWaterSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => corpus.SataKol)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => corpus.Cost)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AddToBuildCorpus", "PcBuilder"))
+                    {
+                        <input width="1" name='id' value=@corpus.IdCorpus , style="visibility: hidden; width: 2px" />
+                        <input type="submit" class="btn btn-success" value="Добавить" />
+                    }
+
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</details>*@

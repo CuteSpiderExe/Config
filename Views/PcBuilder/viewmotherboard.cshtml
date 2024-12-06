@@ -1,0 +1,99 @@
+﻿@model Config.Repository.Models.Builder
+
+@{
+    ViewBag.Title = "viewmotherboard";
+}
+
+<h2>Материнские платы</h2>
+<body>
+<table class="table">
+    <tr>
+    </tr>
+    @foreach (var motherboard in Model.Motherboards)
+    {
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Сокет
+            </th>
+            <th>
+                Чипсет
+            </th>
+            <th>
+                Тип оперативной памяти
+            </th>
+            <th>
+                Размер материнской платы
+            </th>
+            <th>
+                Кол-во планок оперативной памяти
+            </th>
+            <th>
+                Кол-во разъмов М2
+            </th>
+            <th>
+                Кол-во разъемов SATA
+            </th>
+            <th>
+                Кол-во PCI
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:100px; height:70px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(motherboard.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => motherboard.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.Socket)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.Chipset)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.Ddr)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.Standart)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.DdrKol)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.M2)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.Sata)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.Pci)
+            </td>
+            <td>
+                @Html.DisplayFor(item => motherboard.Cost)₽
+            </td>
+            <td>
+                @using (Html.BeginForm("AddToBuildMotherboard", "PcBuilder"))
+                {
+                    <input width="1" name='id' value=@motherboard.IdMotherboard , style="visibility: hidden; width: 2px" />
+                    <input type="submit" class="btn btn-success" value="Добавить" />
+                }
+
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+</body>

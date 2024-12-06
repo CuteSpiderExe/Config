@@ -1,0 +1,75 @@
+﻿@model Config.Repository.Models.Builder
+
+@{
+    ViewBag.Title = "viewmemory";
+}
+
+<h2>Хранилище данных</h2>
+<body>
+<table class="table">
+    <tr>
+    </tr>
+    @foreach (var memory in Model.Memorys)
+    {
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Интерфейс подключения
+            </th>
+            <th>
+                Объем памяти
+            </th>
+            <th>
+                Скорость чтения
+            </th>
+            <th>
+                Скорость записи
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:100px; height:70px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(memory.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => memory.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => memory.Interface)
+            </td>
+            <td>
+                @Html.DisplayFor(item => memory.MemorySize)ГБ
+            </td>
+            <td>
+                @Html.DisplayFor(item => memory.SpeedChten)Мбайт/сек
+            </td>
+            <td>
+                @Html.DisplayFor(item => memory.SpeedZap)Мбайт/сек
+            </td>
+            <td>
+                @Html.DisplayFor(item => memory.Cost)₽
+            </td>
+            <td>
+                @using (Html.BeginForm("AddToBuildMemory", "PcBuilder"))
+                {
+                    <input width="1" name='id' value=@memory.IdMemory , style="visibility: hidden; width: 2px" />
+                    <input type="submit" class="btn btn-success" value="Добавить" />
+                }
+
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+</body>

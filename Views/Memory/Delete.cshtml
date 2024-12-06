@@ -1,0 +1,79 @@
+﻿@model Config.Repository.Models.Memory
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Memory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @Html.Raw("<img style='width:150px; height:130px;' src=\"data:image/jpeg;base64,"
+                                 + Convert.ToBase64String(Model.Image) + "\" />")
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interface)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interface)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemorySize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemorySize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpeedZap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpeedZap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpeedChten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpeedChten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Get")
+        </div>
+    }
+</div>

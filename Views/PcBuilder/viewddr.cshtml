@@ -1,0 +1,75 @@
+﻿@model Config.Repository.Models.Builder
+
+@{
+    ViewBag.Title = "viewddr";
+}
+
+<h2>Оперативная память</h2>
+<body>
+<table class="table">
+    <tr>
+    </tr>
+    @foreach (var ddr in Model.Ddrs)
+    {
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Тип памяти
+            </th>
+            <th>
+                Объем памяти
+            </th>
+            <th>
+                Частота памяти
+            </th>
+            <th>
+                Кол-во планок
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:100px; height:70px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(ddr.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => ddr.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => ddr.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(item => ddr.Memory)ГБ
+            </td>
+            <td>
+                @Html.DisplayFor(item => ddr.Chast)МГц
+            </td>
+            <td>
+                @Html.DisplayFor(item => ddr.Kol)
+            </td>
+            <td>
+                @Html.DisplayFor(item => ddr.Cost)₽
+            </td>
+            <td>
+                @using (Html.BeginForm("AddToBuildDdr", "PcBuilder"))
+                {
+                    <input width="1" name='id' value=@ddr.IdDdr , style="visibility: hidden; width: 2px" />
+                    <input type="submit" class="btn btn-success" value="Добавить" />
+                }
+
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+</body>

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Config.Controllers.BasketController">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAEAAABAAAA=</HashCode>
+      <FileName>Controllers\BasketController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.CorpusController">
+    <Position X="4.25" Y="6" Width="1.5" />
+    <InheritanceLine Type="System.Web.Mvc.Controller" ManuallyRouted="true">
+      <Path>
+        <Point X="13.625" Y="3.25" />
+        <Point X="13.625" Y="6.625" />
+        <Point X="12.377" Y="6.625" />
+        <Point X="12.377" Y="11.315" />
+        <Point X="5" Y="11.315" />
+        <Point X="5" Y="8.261" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\CorpusController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.DDRController">
+    <Position X="3" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\DDRController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.HomeController">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEACAAAACAAQAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.LoginController">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAIAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\LoginController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.MemoryController">
+    <Position X="2.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\MemoryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.MotherboardController">
+    <Position X="6" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\MotherboardController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.OhladController">
+    <Position X="6" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\OhladController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.OhladWaterController">
+    <Position X="9.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\OhladWaterController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.PcBuilderController">
+    <Position X="0.75" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>RAEAACFEAAAUgAAAAQAERAAAAAACAAAQAQEEAAEAAAA=</HashCode>
+      <FileName>Controllers\PcBuilderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.PowerBlockController">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PowerBlockController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.ProcessorController">
+    <Position X="7.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ProcessorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.VideocardController">
+    <Position X="0.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAEAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\VideocardController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Controllers.ZakazController">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAUAAAAAAAAAAAAAAAACAAEAEAAAAAA=</HashCode>
+      <FileName>Controllers\ZakazController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Providers.CustomRoleProvider">
+    <Position X="17.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEEAAwAAAEAAAAAAAABAAAAAAAAAIAAAAEAAEQAAA=</HashCode>
+      <FileName>Providers\CustomRoleProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Korzina">
+    <Position X="26" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAFAAAAAAAAAABAAAAAAIIAAAAEAABAA=</HashCode>
+      <FileName>Repository\Korzina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.ZakazModel">
+    <Position X="26.75" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\ZakazModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.MagazDbContext">
+    <Position X="22.25" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAABABAAEQAQAAAAEAAAAAAEEAAAEAAAAwCAAQAEAgA=</HashCode>
+      <FileName>Repository\MagazDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Zakaz">
+    <Position X="28.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgEAAAAAAAAAAAAAAAAAAgAAIABAAABAAAAAAA=</HashCode>
+      <FileName>Repository\Models\Zakaz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Builder">
+    <Position X="28.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAQAAAAAAAQAAIgAIAAAAAAAAAAYAAAgA=</HashCode>
+      <FileName>Repository\Models\Builder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Corpus">
+    <Position X="26.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgBAAAAAAABQAwAAAABAAQQAEEAgAAAA=</HashCode>
+      <FileName>Repository\Models\Corpus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.KorzinaView">
+    <Position X="31.5" Y="16.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="31.25" Y="15.95" />
+        <Point X="31.25" Y="22.415" />
+        <Point X="31.34" Y="22.415" />
+        <Point X="31.34" Y="19.084" />
+        <Point X="31.333" Y="19.084" Type="JumpStart" />
+        <Point X="31.167" Y="19.084" Type="JumpEnd" />
+        <Point X="30.658" Y="19.084" />
+        <Point X="30.658" Y="18.358" />
+        <Point X="31.292" Y="18.358" />
+        <Point X="31.292" Y="16.862" />
+        <Point X="31.365" Y="16.862" />
+        <Point X="31.365" Y="16.33" />
+        <Point X="32.25" Y="16.33" />
+        <Point X="32.25" Y="16.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QAABgIQACDAwAFIEQAAAlgAiBAAAQwBIoICBAEQABAA=</HashCode>
+      <FileName>Repository\Models\KorzinaView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Login">
+    <Position X="26.75" Y="21.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Models\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Memory">
+    <Position X="28.75" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAABAABQAAAAAABAAAQAAAAAAhAA=</HashCode>
+      <FileName>Repository\Models\Memory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Motherboard">
+    <Position X="33.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAIAAAAgQAAAAAAADQAAAAAATEAAQAAAAAgAAA=</HashCode>
+      <FileName>Repository\Models\Motherboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Ohlad">
+    <Position X="35" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAgBQAAAAAARAAAQAAAAAAAAA=</HashCode>
+      <FileName>Repository\Models\Ohlad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.OhladWater">
+    <Position X="35" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAACABQAAAAAARAAAQAAAAAAAAA=</HashCode>
+      <FileName>Repository\Models\OhladWater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Processor">
+    <Position X="27.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAAAAAAAAAAAAAAAAgABYAAAAAARAAARAAAAAAAAA=</HashCode>
+      <FileName>Repository\Models\Processor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Role">
+    <Position X="26" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Repository\Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Repository.Models.Sborka">
+    <Position X="33.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgAICAGgIAAAAAAAACgBYAQAMAACAABAADwBAABAI=</HashCode>
+      <FileName>Repository\Models\Sborka.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object">
+    <Position X="30.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Config.Models.DDR">
+    <Position X="33.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAQAAAAAAAABQAAAABABAAAwAAAAAAAAA=</HashCode>
+      <FileName>Models\DDR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Models.PowerBlock">
+    <Position X="35" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAABQAAAAAABABAQACAAgAAAA=</HashCode>
+      <FileName>Models\PowerBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Models.User">
+    <Position X="31.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAKAQAQAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Config.Models.Videocard">
+    <Position X="29.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABQABAAAABADAwgAAAAAAAA=</HashCode>
+      <FileName>Models\Videocard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.Mvc.Controller">
+    <Position X="12.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Web.Security.RoleProvider">
+    <Position X="15" Y="8.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.EntityFrameworkCore.DbContext">
+    <Position X="19.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

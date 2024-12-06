@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище MagazModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Corpus">
+          <Key>
+            <PropertyRef Name="ID_corpus" />
+          </Key>
+          <Property Name="ID_corpus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Size" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mother_size" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Video_size" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PowerBlock_size" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPU_fun_size" Type="int" Nullable="false" />
+          <Property Name="CPU_water_size" Type="int" Nullable="false" />
+          <Property Name="Sata_kol" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DDR">
+          <Key>
+            <PropertyRef Name="ID_ddr" />
+          </Key>
+          <Property Name="ID_ddr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Chast" Type="int" Nullable="false" />
+          <Property Name="Memory" Type="int" Nullable="false" />
+          <Property Name="Kol" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Memory">
+          <Key>
+            <PropertyRef Name="ID_memory" />
+          </Key>
+          <Property Name="ID_memory" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Interface" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Memory_size" Type="int" Nullable="false" />
+          <Property Name="Speed_zap" Type="int" Nullable="false" />
+          <Property Name="Speed_chten" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="ID_Motherboard" />
+          </Key>
+          <Property Name="ID_Motherboard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Socket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DDR" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Standart" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Chipset" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DDR_kol" Type="int" Nullable="false" />
+          <Property Name="PCI" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="M2" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sata" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ohlad">
+          <Key>
+            <PropertyRef Name="ID_ohlad" />
+          </Key>
+          <Property Name="ID_ohlad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="TDP" Type="int" Nullable="false" />
+          <Property Name="Socket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ohlad_water">
+          <Key>
+            <PropertyRef Name="ID_ohlad_water" />
+          </Key>
+          <Property Name="ID_ohlad_water" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="TDP" Type="int" Nullable="false" />
+          <Property Name="Socket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PowerBlock">
+          <Key>
+            <PropertyRef Name="ID_powerblock" />
+          </Key>
+          <Property Name="ID_powerblock" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Size" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+          <Property Name="Sertificat" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Processor">
+          <Key>
+            <PropertyRef Name="ID_processor" />
+          </Key>
+          <Property Name="ID_processor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Socket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ddr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TDP" Type="int" Nullable="false" />
+          <Property Name="Core" Type="int" Nullable="false" />
+          <Property Name="Core_shast" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_role" />
+          </Key>
+          <Property Name="ID_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_role" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sborka">
+          <Key>
+            <PropertyRef Name="ID_sborka" />
+          </Key>
+          <Property Name="ID_sborka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="ID_processor" Type="int" />
+          <Property Name="ID_Motherboard" Type="int" />
+          <Property Name="ID_corpus" Type="int" />
+          <Property Name="ID_ohlad" Type="int" />
+          <Property Name="ID_ohlad_water" Type="int" />
+          <Property Name="ID_ddr" Type="int" />
+          <Property Name="ID_memory" Type="int" />
+          <Property Name="ID_powerblock" Type="int" />
+          <Property Name="ID_User" Type="int" />
+          <Property Name="ID_videocard" Type="int" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="ZakazSborki" Type="bit" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID_user" />
+          </Key>
+          <Property Name="ID_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Password" Type="varchar(max)" Nullable="false" />
+          <Property Name="ID_role" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Videocard">
+          <Key>
+            <PropertyRef Name="ID_videocard" />
+          </Key>
+          <Property Name="ID_videocard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Video_size" Type="int" Nullable="false" />
+          <Property Name="GDDR" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Memory" Type="int" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zakaz">
+          <Key>
+            <PropertyRef Name="ID_zakaz" />
+          </Key>
+          <Property Name="ID_zakaz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Adress" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_sborka" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Sborka_Corpus">
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Corpus">
+              <PropertyRef Name="ID_corpus" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_corpus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_DDR">
+          <End Role="DDR" Type="Self.DDR" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DDR">
+              <PropertyRef Name="ID_ddr" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_ddr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Memory">
+          <End Role="Memory" Type="Self.Memory" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Memory">
+              <PropertyRef Name="ID_memory" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_memory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Motherboard">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="ID_Motherboard" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_Motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Ohlad">
+          <End Role="Ohlad" Type="Self.Ohlad" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ohlad">
+              <PropertyRef Name="ID_ohlad" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_ohlad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Ohlad_water">
+          <End Role="Ohlad_water" Type="Self.Ohlad_water" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ohlad_water">
+              <PropertyRef Name="ID_ohlad_water" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_ohlad_water" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_PowerBlock">
+          <End Role="PowerBlock" Type="Self.PowerBlock" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PowerBlock">
+              <PropertyRef Name="ID_powerblock" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_powerblock" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Processor">
+          <End Role="Processor" Type="Self.Processor" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processor">
+              <PropertyRef Name="ID_processor" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Sborka">
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="1" />
+          <End Role="Sborka1" Type="Self.Sborka" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sborka">
+              <PropertyRef Name="ID_sborka" />
+            </Principal>
+            <Dependent Role="Sborka1">
+              <PropertyRef Name="ID_sborka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_user" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Videocard">
+          <End Role="Videocard" Type="Self.Videocard" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Videocard">
+              <PropertyRef Name="ID_videocard" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_videocard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_role" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ID_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zakaz_Sborka">
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="1" />
+          <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sborka">
+              <PropertyRef Name="ID_sborka" />
+            </Principal>
+            <Dependent Role="Zakaz">
+              <PropertyRef Name="ID_sborka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище MagazModelContainer">
+          <EntitySet Name="Corpus" EntityType="Self.Corpus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DDR" EntityType="Self.DDR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Memory" EntityType="Self.Memory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ohlad" EntityType="Self.Ohlad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ohlad_water" EntityType="Self.Ohlad_water" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PowerBlock" EntityType="Self.PowerBlock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Processor" EntityType="Self.Processor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sborka" EntityType="Self.Sborka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Videocard" EntityType="Self.Videocard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zakaz" EntityType="Self.Zakaz" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Sborka_Corpus" Association="Self.FK_Sborka_Corpus">
+            <End Role="Corpus" EntitySet="Corpus" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_DDR" Association="Self.FK_Sborka_DDR">
+            <End Role="DDR" EntitySet="DDR" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Memory" Association="Self.FK_Sborka_Memory">
+            <End Role="Memory" EntitySet="Memory" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Motherboard" Association="Self.FK_Sborka_Motherboard">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Ohlad" Association="Self.FK_Sborka_Ohlad">
+            <End Role="Ohlad" EntitySet="Ohlad" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Ohlad_water" Association="Self.FK_Sborka_Ohlad_water">
+            <End Role="Ohlad_water" EntitySet="Ohlad_water" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_PowerBlock" Association="Self.FK_Sborka_PowerBlock">
+            <End Role="PowerBlock" EntitySet="PowerBlock" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Processor" Association="Self.FK_Sborka_Processor">
+            <End Role="Processor" EntitySet="Processor" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Sborka" Association="Self.FK_Sborka_Sborka">
+            <End Role="Sborka" EntitySet="Sborka" />
+            <End Role="Sborka1" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_User" Association="Self.FK_Sborka_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Videocard" Association="Self.FK_Sborka_Videocard">
+            <End Role="Videocard" EntitySet="Videocard" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zakaz_Sborka" Association="Self.FK_Zakaz_Sborka">
+            <End Role="Sborka" EntitySet="Sborka" />
+            <End Role="Zakaz" EntitySet="Zakaz" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MagazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Corpus">
+          <Key>
+            <PropertyRef Name="ID_corpus" />
+          </Key>
+          <Property Name="ID_corpus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mother_size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Video_size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PowerBlock_size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPU_fun_size" Type="Int32" Nullable="false" />
+          <Property Name="CPU_water_size" Type="Int32" Nullable="false" />
+          <Property Name="Sata_kol" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_Corpus" FromRole="Corpus" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="DDR">
+          <Key>
+            <PropertyRef Name="ID_ddr" />
+          </Key>
+          <Property Name="ID_ddr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Chast" Type="Int32" Nullable="false" />
+          <Property Name="Memory" Type="Int32" Nullable="false" />
+          <Property Name="Kol" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_DDR" FromRole="DDR" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Memory">
+          <Key>
+            <PropertyRef Name="ID_memory" />
+          </Key>
+          <Property Name="ID_memory" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Interface" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Memory_size" Type="Int32" Nullable="false" />
+          <Property Name="Speed_zap" Type="Int32" Nullable="false" />
+          <Property Name="Speed_chten" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_Memory" FromRole="Memory" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="ID_Motherboard" />
+          </Key>
+          <Property Name="ID_Motherboard" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DDR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Standart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Chipset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DDR_kol" Type="Int32" Nullable="false" />
+          <Property Name="PCI" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="M2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sata" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_Motherboard" FromRole="Motherboard" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Ohlad">
+          <Key>
+            <PropertyRef Name="ID_ohlad" />
+          </Key>
+          <Property Name="ID_ohlad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="TDP" Type="Int32" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_Ohlad" FromRole="Ohlad" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Ohlad_water">
+          <Key>
+            <PropertyRef Name="ID_ohlad_water" />
+          </Key>
+          <Property Name="ID_ohlad_water" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="TDP" Type="Int32" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_Ohlad_water" FromRole="Ohlad_water" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="PowerBlock">
+          <Key>
+            <PropertyRef Name="ID_powerblock" />
+          </Key>
+          <Property Name="ID_powerblock" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+          <Property Name="Sertificat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_PowerBlock" FromRole="PowerBlock" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Processor">
+          <Key>
+            <PropertyRef Name="ID_processor" />
+          </Key>
+          <Property Name="ID_processor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ddr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TDP" Type="Int32" Nullable="false" />
+          <Property Name="Core" Type="Int32" Nullable="false" />
+          <Property Name="Core_shast" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_Processor" FromRole="Processor" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_role" />
+          </Key>
+          <Property Name="ID_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_role" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Sborka">
+          <Key>
+            <PropertyRef Name="ID_sborka" />
+          </Key>
+          <Property Name="ID_sborka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_processor" Type="Int32" />
+          <Property Name="ID_Motherboard" Type="Int32" />
+          <Property Name="ID_corpus" Type="Int32" />
+          <Property Name="ID_ohlad" Type="Int32" />
+          <Property Name="ID_ohlad_water" Type="Int32" />
+          <Property Name="ID_ddr" Type="Int32" />
+          <Property Name="ID_memory" Type="Int32" />
+          <Property Name="ID_powerblock" Type="Int32" />
+          <Property Name="ID_User" Type="Int32" />
+          <Property Name="ID_videocard" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Corpus" Relationship="Self.FK_Sborka_Corpus" FromRole="Sborka" ToRole="Corpus" />
+          <NavigationProperty Name="DDR" Relationship="Self.FK_Sborka_DDR" FromRole="Sborka" ToRole="DDR" />
+          <NavigationProperty Name="Memory" Relationship="Self.FK_Sborka_Memory" FromRole="Sborka" ToRole="Memory" />
+          <NavigationProperty Name="Motherboard" Relationship="Self.FK_Sborka_Motherboard" FromRole="Sborka" ToRole="Motherboard" />
+          <NavigationProperty Name="Ohlad" Relationship="Self.FK_Sborka_Ohlad" FromRole="Sborka" ToRole="Ohlad" />
+          <NavigationProperty Name="Ohlad_water" Relationship="Self.FK_Sborka_Ohlad_water" FromRole="Sborka" ToRole="Ohlad_water" />
+          <NavigationProperty Name="PowerBlock" Relationship="Self.FK_Sborka_PowerBlock" FromRole="Sborka" ToRole="PowerBlock" />
+          <NavigationProperty Name="Processor" Relationship="Self.FK_Sborka_Processor" FromRole="Sborka" ToRole="Processor" />
+          <NavigationProperty Name="Sborka1" Relationship="Self.FK_Sborka_Sborka" FromRole="Sborka" ToRole="Sborka1" />
+          <NavigationProperty Name="Sborka2" Relationship="Self.FK_Sborka_Sborka" FromRole="Sborka1" ToRole="Sborka" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Sborka_User" FromRole="Sborka" ToRole="User" />
+          <NavigationProperty Name="Videocard" Relationship="Self.FK_Sborka_Videocard" FromRole="Sborka" ToRole="Videocard" />
+          <NavigationProperty Name="Zakaz" Relationship="Self.FK_Zakaz_Sborka" FromRole="Sborka" ToRole="Zakaz" />
+          <Property Name="ZakazSborki" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID_user" />
+          </Key>
+          <Property Name="ID_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_role" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_User" FromRole="User" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Videocard">
+          <Key>
+            <PropertyRef Name="ID_videocard" />
+          </Key>
+          <Property Name="ID_videocard" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Video_size" Type="Int32" Nullable="false" />
+          <Property Name="GDDR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Memory" Type="Int32" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Sborka_Videocard" FromRole="Videocard" ToRole="Sborka" />
+        </EntityType>
+        <EntityType Name="Zakaz">
+          <Key>
+            <PropertyRef Name="ID_zakaz" />
+          </Key>
+          <Property Name="ID_zakaz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Adress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_sborka" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sborka" Relationship="Self.FK_Zakaz_Sborka" FromRole="Zakaz" ToRole="Sborka" />
+        </EntityType>
+        <Association Name="FK_Sborka_Corpus">
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Corpus">
+              <PropertyRef Name="ID_corpus" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_corpus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_DDR">
+          <End Role="DDR" Type="Self.DDR" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DDR">
+              <PropertyRef Name="ID_ddr" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_ddr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Memory">
+          <End Role="Memory" Type="Self.Memory" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Memory">
+              <PropertyRef Name="ID_memory" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_memory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Motherboard">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="ID_Motherboard" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_Motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Ohlad">
+          <End Role="Ohlad" Type="Self.Ohlad" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ohlad">
+              <PropertyRef Name="ID_ohlad" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_ohlad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Ohlad_water">
+          <End Role="Ohlad_water" Type="Self.Ohlad_water" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ohlad_water">
+              <PropertyRef Name="ID_ohlad_water" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_ohlad_water" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_PowerBlock">
+          <End Role="PowerBlock" Type="Self.PowerBlock" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PowerBlock">
+              <PropertyRef Name="ID_powerblock" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_powerblock" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Processor">
+          <End Role="Processor" Type="Self.Processor" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processor">
+              <PropertyRef Name="ID_processor" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_role" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ID_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Sborka">
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="1" />
+          <End Role="Sborka1" Type="Self.Sborka" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sborka">
+              <PropertyRef Name="ID_sborka" />
+            </Principal>
+            <Dependent Role="Sborka1">
+              <PropertyRef Name="ID_sborka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_user" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sborka_Videocard">
+          <End Role="Videocard" Type="Self.Videocard" Multiplicity="0..1" />
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Videocard">
+              <PropertyRef Name="ID_videocard" />
+            </Principal>
+            <Dependent Role="Sborka">
+              <PropertyRef Name="ID_videocard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zakaz_Sborka">
+          <End Role="Sborka" Type="Self.Sborka" Multiplicity="1" />
+          <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sborka">
+              <PropertyRef Name="ID_sborka" />
+            </Principal>
+            <Dependent Role="Zakaz">
+              <PropertyRef Name="ID_sborka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MagazEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Corpus" EntityType="Self.Corpus" />
+          <EntitySet Name="DDR" EntityType="Self.DDR" />
+          <EntitySet Name="Memory" EntityType="Self.Memory" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" />
+          <EntitySet Name="Ohlad" EntityType="Self.Ohlad" />
+          <EntitySet Name="Ohlad_water" EntityType="Self.Ohlad_water" />
+          <EntitySet Name="PowerBlock" EntityType="Self.PowerBlock" />
+          <EntitySet Name="Processor" EntityType="Self.Processor" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Sborka" EntityType="Self.Sborka" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="Videocard" EntityType="Self.Videocard" />
+          <EntitySet Name="Zakaz" EntityType="Self.Zakaz" />
+          <AssociationSet Name="FK_Sborka_Corpus" Association="Self.FK_Sborka_Corpus">
+            <End Role="Corpus" EntitySet="Corpus" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_DDR" Association="Self.FK_Sborka_DDR">
+            <End Role="DDR" EntitySet="DDR" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Memory" Association="Self.FK_Sborka_Memory">
+            <End Role="Memory" EntitySet="Memory" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Motherboard" Association="Self.FK_Sborka_Motherboard">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Ohlad" Association="Self.FK_Sborka_Ohlad">
+            <End Role="Ohlad" EntitySet="Ohlad" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Ohlad_water" Association="Self.FK_Sborka_Ohlad_water">
+            <End Role="Ohlad_water" EntitySet="Ohlad_water" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_PowerBlock" Association="Self.FK_Sborka_PowerBlock">
+            <End Role="PowerBlock" EntitySet="PowerBlock" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Processor" Association="Self.FK_Sborka_Processor">
+            <End Role="Processor" EntitySet="Processor" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Sborka" Association="Self.FK_Sborka_Sborka">
+            <End Role="Sborka" EntitySet="Sborka" />
+            <End Role="Sborka1" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_User" Association="Self.FK_Sborka_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sborka_Videocard" Association="Self.FK_Sborka_Videocard">
+            <End Role="Videocard" EntitySet="Videocard" />
+            <End Role="Sborka" EntitySet="Sborka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zakaz_Sborka" Association="Self.FK_Zakaz_Sborka">
+            <End Role="Sborka" EntitySet="Sborka" />
+            <End Role="Zakaz" EntitySet="Zakaz" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MagazModelContainer" CdmEntityContainer="MagazEntities1">
+          <EntitySetMapping Name="Corpus">
+            <EntityTypeMapping TypeName="MagazModel.Corpus">
+              <MappingFragment StoreEntitySet="Corpus">
+                <ScalarProperty Name="ID_corpus" ColumnName="ID_corpus" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Mother_size" ColumnName="Mother_size" />
+                <ScalarProperty Name="Video_size" ColumnName="Video_size" />
+                <ScalarProperty Name="PowerBlock_size" ColumnName="PowerBlock_size" />
+                <ScalarProperty Name="CPU_fun_size" ColumnName="CPU_fun_size" />
+                <ScalarProperty Name="CPU_water_size" ColumnName="CPU_water_size" />
+                <ScalarProperty Name="Sata_kol" ColumnName="Sata_kol" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDR">
+            <EntityTypeMapping TypeName="MagazModel.DDR">
+              <MappingFragment StoreEntitySet="DDR">
+                <ScalarProperty Name="ID_ddr" ColumnName="ID_ddr" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Chast" ColumnName="Chast" />
+                <ScalarProperty Name="Memory" ColumnName="Memory" />
+                <ScalarProperty Name="Kol" ColumnName="Kol" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Memory">
+            <EntityTypeMapping TypeName="MagazModel.Memory">
+              <MappingFragment StoreEntitySet="Memory">
+                <ScalarProperty Name="ID_memory" ColumnName="ID_memory" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="Memory_size" ColumnName="Memory_size" />
+                <ScalarProperty Name="Speed_zap" ColumnName="Speed_zap" />
+                <ScalarProperty Name="Speed_chten" ColumnName="Speed_chten" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motherboard">
+            <EntityTypeMapping TypeName="MagazModel.Motherboard">
+              <MappingFragment StoreEntitySet="Motherboard">
+                <ScalarProperty Name="ID_Motherboard" ColumnName="ID_Motherboard" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="DDR" ColumnName="DDR" />
+                <ScalarProperty Name="Standart" ColumnName="Standart" />
+                <ScalarProperty Name="Chipset" ColumnName="Chipset" />
+                <ScalarProperty Name="DDR_kol" ColumnName="DDR_kol" />
+                <ScalarProperty Name="PCI" ColumnName="PCI" />
+                <ScalarProperty Name="M2" ColumnName="M2" />
+                <ScalarProperty Name="Sata" ColumnName="Sata" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ohlad">
+            <EntityTypeMapping TypeName="MagazModel.Ohlad">
+              <MappingFragment StoreEntitySet="Ohlad">
+                <ScalarProperty Name="ID_ohlad" ColumnName="ID_ohlad" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ohlad_water">
+            <EntityTypeMapping TypeName="MagazModel.Ohlad_water">
+              <MappingFragment StoreEntitySet="Ohlad_water">
+                <ScalarProperty Name="ID_ohlad_water" ColumnName="ID_ohlad_water" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PowerBlock">
+            <EntityTypeMapping TypeName="MagazModel.PowerBlock">
+              <MappingFragment StoreEntitySet="PowerBlock">
+                <ScalarProperty Name="ID_powerblock" ColumnName="ID_powerblock" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="Sertificat" ColumnName="Sertificat" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Processor">
+            <EntityTypeMapping TypeName="MagazModel.Processor">
+              <MappingFragment StoreEntitySet="Processor">
+                <ScalarProperty Name="ID_processor" ColumnName="ID_processor" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Ddr" ColumnName="Ddr" />
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="Core" ColumnName="Core" />
+                <ScalarProperty Name="Core_shast" ColumnName="Core_shast" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="MagazModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID_role" ColumnName="ID_role" />
+                <ScalarProperty Name="Name_role" ColumnName="Name_role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sborka">
+            <EntityTypeMapping TypeName="MagazModel.Sborka">
+              <MappingFragment StoreEntitySet="Sborka">
+                <ScalarProperty Name="ZakazSborki" ColumnName="ZakazSborki" />
+                <ScalarProperty Name="ID_sborka" ColumnName="ID_sborka" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_processor" ColumnName="ID_processor" />
+                <ScalarProperty Name="ID_Motherboard" ColumnName="ID_Motherboard" />
+                <ScalarProperty Name="ID_corpus" ColumnName="ID_corpus" />
+                <ScalarProperty Name="ID_ohlad" ColumnName="ID_ohlad" />
+                <ScalarProperty Name="ID_ohlad_water" ColumnName="ID_ohlad_water" />
+                <ScalarProperty Name="ID_ddr" ColumnName="ID_ddr" />
+                <ScalarProperty Name="ID_memory" ColumnName="ID_memory" />
+                <ScalarProperty Name="ID_powerblock" ColumnName="ID_powerblock" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="ID_videocard" ColumnName="ID_videocard" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="MagazModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID_user" ColumnName="ID_user" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ID_role" ColumnName="ID_role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videocard">
+            <EntityTypeMapping TypeName="MagazModel.Videocard">
+              <MappingFragment StoreEntitySet="Videocard">
+                <ScalarProperty Name="ID_videocard" ColumnName="ID_videocard" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Video_size" ColumnName="Video_size" />
+                <ScalarProperty Name="GDDR" ColumnName="GDDR" />
+                <ScalarProperty Name="Memory" ColumnName="Memory" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zakaz">
+            <EntityTypeMapping TypeName="MagazModel.Zakaz">
+              <MappingFragment StoreEntitySet="Zakaz">
+                <ScalarProperty Name="ID_zakaz" ColumnName="ID_zakaz" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID_sborka" ColumnName="ID_sborka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

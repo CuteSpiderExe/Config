@@ -1,0 +1,70 @@
+﻿@model Config.Repository.Models.Builder
+
+@{
+    ViewBag.Title = "viewpowerblock";
+}
+
+<h2>Блоки питания</h2>
+<body>
+<table class="table">
+    <tr>
+    </tr>
+    @foreach (var powerBlock in Model.PowerBlocks)
+    {
+        <tr>
+            <th>
+
+
+            </th>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Мощность
+            </th>
+            <th>
+                Сертификат
+            </th>
+            <th>
+                Размер
+            </th>
+            <th>
+                Цена
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.Raw("<img style='width:100px; height:70px;' src=\"data:image/jpeg;base64,"
+                                     + Convert.ToBase64String(powerBlock.Image) + "\" />")
+            </th>
+            <td>
+                @Html.DisplayFor(item => powerBlock.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(item => powerBlock.Power)Вт
+            </td>
+            <td>
+                @Html.DisplayFor(item => powerBlock.Sertificat)
+            </td>
+            <td>
+                @Html.DisplayFor(item => powerBlock.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(item => powerBlock.Cost)₽
+            </td>
+            <td>
+                @using (Html.BeginForm("AddToBuildPowerblock", "PcBuilder"))
+                {
+
+                    <input width="1" name='id' value=@powerBlock.IdPowerblock , style="visibility: hidden; width: 2px" />
+                    <input type="submit" class="btn btn-success" value="Добавить" />
+                }
+
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+</body>

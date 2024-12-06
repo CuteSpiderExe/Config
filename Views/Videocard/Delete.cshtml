@@ -1,0 +1,79 @@
+﻿@model Config.Repository.Models.Videocard
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены что хотите выполнить удаление?</h3>
+<div>
+    <h4>Видеокарта</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @Html.Raw("<img style='width:150px; height:130px;' src=\"data:image/jpeg;base64,"
+                                 + Convert.ToBase64String(Model.Image) + "\" />")
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gddr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gddr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Memory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Memory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Power)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Power)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Обратно", "Get")
+        </div>
+    }
+</div>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5f5f973079b44fe96191eb33e4aa8bd" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="MagazModel.Corpus" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.DDR" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Memory" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Motherboard" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Ohlad" Width="1.5" PointX="3" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Ohlad_water" Width="1.5" PointX="3" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.PowerBlock" Width="1.5" PointX="3" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Processor" Width="1.5" PointX="3" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Role" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Sborka" Width="1.5" PointX="5.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.User" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Videocard" Width="1.5" PointX="3" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Zakaz" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Corpus" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_DDR" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Memory" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Motherboard" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Ohlad" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Ohlad_water" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_PowerBlock" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Processor" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Sborka" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sborka_Videocard" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Zakaz_Sborka" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
